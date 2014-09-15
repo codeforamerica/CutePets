@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.petharbor.com/petoftheday.asp?availableonly=1&shelterlist='DNVR'&showstat=1&source=results&type=dog
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.petharbor.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '1023'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDSQADQDSB=KLGMCKJDDBCPHPNOHPLHMGDF; path=/
+      X-Powered-By:
+      - ARR/2.5
+      - ASP.NET
+      Date:
+      - Mon, 15 Sep 2014 18:49:20 GMT
+    body:
+      encoding: UTF-8
+      string: 'document.write ("<TABLE cellpadding=\"0\" cellspacing=\"0\" bgcolor=white
+        border=0><TR><TD align=center><A href=\"http://www.PetHarbor.com/detail.asp?ID=A223117&LOCATION=DNVR&searchtype=rnd&shelterlist=''DNVR''&where=dummy&kiosk=1\"><IMG
+        HEIGHT = \"140\" WIDTH=\"\" NAME=\"PetOfTheDay\" ID=\"PetOfTheDay\" CLASS=\"PetOfTheDay\"
+        SRC=\"http://www.PetHarbor.com/get_image.asp?RES=Thumb&ID=A223117&LOCATION=DNVR\"
+        border=\"1\" alt=\"www.PetHarbor.com\" title=\"www.PetHarbor.com Adoptable,
+        Lost/Found pets nationwide. Breed Search. Email a Friend.\"></A></TD></TR><TR><TD
+        align=center><B><FONT color=\"black\" face=\"arial\" size=\"10\">MORTY (A223117)</FONT></B></TD></TR><TR><TD
+        align=center><B><FONT color=\"black\" face=\"arial\" size=\"10\">ADOPTABLE</FONT></B></TD></TR><TR><TD
+        align=center><B><FONT color=\"black\" face=\"arial\" size=\"10\">NEUTERED
+        MALE WHITE BICHON FRISE</FONT></B></TD></TR><TR><TD align=center><B><FONT
+        color=\"black\" face=\"arial\" size=\"10\">Denver Animal Shelter</FONT></B></TD></TR></TABLE>"); '
+    http_version: 
+  recorded_at: Mon, 15 Sep 2014 18:49:28 GMT
+recorded_with: VCR 2.9.3

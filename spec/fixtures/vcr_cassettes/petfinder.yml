@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.petfinder.com/pet.getRandom?format=json&key=1b3dc6525bf82e42d3a64ddaa52860b2&output=full&shelterid=MA38
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.petfinder.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 12 Sep 2014 22:28:26 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '2135'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"@encoding":"iso-8859-1","@version":"1.0","petfinder":{"pet":{"options":{"option":{"$t":"altered"}},"breeds":{"breed":{"$t":"Ferret"}},"shelterPetId":{"$t":"A297612"},"status":{"$t":"A"},"name":{"$t":"JOEY"},"contact":{"email":{"$t":"adoption@mspca.org"},"zip":{"$t":"02130"},"city":{"$t":"Boston"},"fax":{"$t":"617-524-5652"},"address1":{"$t":"350
+        South Huntington Avenue"},"phone":{"$t":"617-522-5055  "},"state":{"$t":"MA"},"address2":{}},"description":{"$t":"Patrick
+        and Joey3 yearsNeutered malesMy owner did not have enough time for us and
+        the new baby.  Hi!  We''re Patrick and Joey, two playful ferrets looking for
+        a great home.  We like ferret kibble and peanut butter treats, and we are
+        litter box trained, so we are very neat.  We are very energetic and mischievous.  If
+        you are looking for some fun new playmates, we are your guys!We are not picky
+        about our housing - a basic ferret setup is fine for us, as long as we have
+        enough room to move around.  Take us home today!**We are already neutered,
+        so we can go home with you right away!!**"},"sex":{"$t":"M"},"age":{"$t":"Adult"},"size":{"$t":"M"},"mix":{"$t":"no"},"shelterId":{"$t":"MA38"},"lastUpdate":{"$t":"2014-08-28T03:21:13Z"},"media":{"photos":{"photo":[{"@size":"pnt","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=60&-pnt.jpg","@id":"1"},{"@size":"fpm","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=95&-fpm.jpg","@id":"1"},{"@size":"x","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=500&-x.jpg","@id":"1"},{"@size":"pn","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=300&-pn.jpg","@id":"1"},{"@size":"t","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=50&-t.jpg","@id":"1"}]}},"id":{"$t":"30078059"},"animal":{"$t":"Small
+        & Furry"}},"@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","header":{"timestamp":{"$t":"2014-09-12T22:28:26Z"},"status":{"message":{},"code":{"$t":"100"}},"version":{"$t":"0.1"}},"@xsi:noNamespaceSchemaLocation":"http://api.petfinder.com/schemas/0.9/petfinder.xsd"}}'
+    http_version: 
+  recorded_at: Fri, 12 Sep 2014 22:28:27 GMT
+recorded_with: VCR 2.9.3
