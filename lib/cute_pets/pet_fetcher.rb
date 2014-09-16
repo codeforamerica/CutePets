@@ -23,13 +23,10 @@ module PetFetcher
       json = JSON.parse(response.body)
       pet_json  = json['petfinder']['pet']
       {
-        breed: pet_json['breeds']['breed']['$t'],
         pic:   get_photo(pet_json),
         link:  "https://www.petfinder.com/petdetail/#{pet_json['id']['$t']}",
-        name:  pet_json['name']['$t'],
-        id:    pet_json['id']['$t'],
-        sex:   get_petfinder_sex(pet_json['sex']['$t']),
-        type:  pet_json['animal']['$t']
+        name:  pet_json['name']['$t'].capitalize,
+        description: "#{pet_json['options']['option']['$t']} #{get_petfinder_sex(pet_json['sex']['$t'])} #{pet_json['breeds']['breed']['$t']}".downcase
       }
     else
       raise 'PetFinder api request failed'
@@ -56,22 +53,16 @@ module PetFetcher
       doc = Hpricot(response_html)
       pet_url = doc.at('//a').attributes['href']
       pet_url = pet_url.gsub('\"', '').gsub('\\', '')
-      pet_id = pet_url.match(/ID=(?<id>\w+)&/)['id']
       pet_pic_html = doc.at('//a').inner_html
       pet_pic_url = pet_pic_html.match(/SRC=\\\"(?<url>.+)\\\"\s+border/)['url']
       table_cols = doc.search('//td')
-      name = table_cols[1].inner_text.match(/^(?<name>\w+)\s+/)['name']
-      sex = get_petharbor_sex(table_cols[3].inner_text)
-      breed = table_cols[3].inner_text.match(/#{sex}\s+(?<breed>.+)/i)['breed']
-
+      name = table_cols[1].inner_text.match(/^(?<name>\w+)\s+/)['name'].capitalize
+      description = table_cols[3].inner_text.downcase
       {
-        breed: breed,
         pic:   pet_pic_url,
         link:  pet_url,
         name:  name,
-        id:    pet_id,
-        sex:   sex,
-        type:  'Dog'
+        description: description
       }
     else
       raise 'PetHarbor request failed'
@@ -81,7 +72,7 @@ module PetFetcher
 private
 
   def get_petfinder_sex(sex_abbreviation)
-    sex_abbreviation.downcase == 'f' ? 'Female' : 'Male'
+    sex_abbreviation.downcase == 'f' ? 'female' : 'male'
   end
 
   def self.get_photo(pet)
@@ -91,6 +82,6 @@ private
   end
 
   def get_petharbor_sex(html_text)
-    html_text =~ /female/i ? 'Female' : 'Male'
+    html_text =~ /female/i ? 'female' : 'male'
   end
 end
