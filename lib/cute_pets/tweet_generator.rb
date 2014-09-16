@@ -1,8 +1,13 @@
-require "twitter"
+require 'twitter'
+require 'yaml'
+
+MESSAGES = YAML.load(File.open("lib/greetings.yml"))
 
 Module TweetGenerator
+  extends self
+
   def tweet(message, pet_pic)
-    client.update_with_media(message, )
+    client.update_with_media(message, pet_pic)
   end
 
   def create_message(pet_name, pet_description, pet_link)
@@ -13,7 +18,7 @@ Module TweetGenerator
 private
 
   def greeting
-    Greeting.new.random
+    MESSAGES.sample
   end
 
   def client
@@ -25,7 +30,7 @@ private
         config.access_token_secret = ENV.fetch('access_token_secret')
 
       rescue KeyError
-        raise "What are your twitter keys? I see none in env. Did you read the README? Specifically,git #{$!}"
+        raise "Please check that your twitter keys are correct"
       end
     end
   end
