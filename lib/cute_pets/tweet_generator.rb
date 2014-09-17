@@ -10,6 +10,8 @@ module TweetGenerator
   MESSAGES = YAML.load(File.open('lib/greetings.yml'))
 
   def tweet(message, pet_pic_url)
+    foo = open(pet_pic_url)
+    puts foo.class
     client.update_with_media(message, open(pet_pic_url))
   end
 

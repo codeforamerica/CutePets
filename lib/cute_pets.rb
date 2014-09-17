@@ -15,7 +15,6 @@ module CutePets
     end
     if pet
       message = TweetGenerator.create_message(pet[:name], pet[:description], pet[:link])
-      puts pet[:pic]
       TweetGenerator.tweet(message, pet[:pic])
     end
   end
