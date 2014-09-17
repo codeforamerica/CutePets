@@ -12,14 +12,14 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 ### Run
 `rake tweet_pet`
 
+## Deployment
+
 ### Twitter
 1. Create a new [twitter app](https://apps.twitter.com/).
 2. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
 3. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
 4. Take note of the values for environment set up below.
 *Note:* It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.
-
-## Deployment
 
 ### Heroku 
 1. Download and install the [Heroku Toolbelt](from: https://toolbelt.heroku.com).
