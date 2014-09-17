@@ -25,11 +25,10 @@ module TweetGenerator
   def client
     Twitter::REST::Client.new do |config|
       begin
-        config.consumer_key = ENV.fetch('consumer_key')
-        config.consumer_secret = ENV.fetch('consumer_secret')
+        config.consumer_key = ENV.fetch('api_key')
+        config.consumer_secret = ENV.fetch('api_secret')
         config.access_token = ENV.fetch('access_token')
         config.access_token_secret = ENV.fetch('access_token_secret')
-
       rescue KeyError
         raise "Please check that your twitter keys are correct"
       end
