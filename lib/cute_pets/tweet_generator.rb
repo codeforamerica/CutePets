@@ -12,8 +12,8 @@ module TweetGenerator
   def tweet(message, pet_pic_url)
     pet_pic_img = open(pet_pic_url)
     if pet_pic_img.is_a?(StringIO)
-      ext = File.extname(url)
-      name = File.basename(url, ext)
+      ext = File.extname(pet_pic_url)
+      name = File.basename(pet_pic_url, ext)
       pet_pic_img = Tempfile.new([name, ext])
     end
     client.update_with_media(message, pet_pic_img)
