@@ -1,6 +1,7 @@
 require 'twitter'
 require 'yaml'
 require 'open-uri'
+require 'tempfile'
 require 'dotenv'
 Dotenv.load
 
