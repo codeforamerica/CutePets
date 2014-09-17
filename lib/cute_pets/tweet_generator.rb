@@ -10,9 +10,13 @@ module TweetGenerator
   MESSAGES = YAML.load(File.open('lib/greetings.yml'))
 
   def tweet(message, pet_pic_url)
-    foo = open(pet_pic_url)
-    puts foo.class
-    client.update_with_media(message, open(pet_pic_url))
+    pet_pic_img = open(pet_pic_url)
+    if pet_pic_img.is_a?(StringIO)
+      ext = File.extname(url)
+      name = File.basename(url, ext)
+      pet_pic_img = Tempfile.new([name, ext])
+    end
+    client.update_with_media(message, pet_pic_img)
   end
 
   def create_message(pet_name, pet_description, pet_link)
