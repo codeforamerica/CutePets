@@ -11,7 +11,7 @@ describe 'PetFetcher' do
 
   describe '.get_petfinder_pet' do
     it 'returns a hash of pet data when the API request is successful' do
-      VCR.use_cassette('petfinder') do
+      VCR.use_cassette('petfinder', record: :once) do
         pet_hash = PetFetcher.get_petfinder_pet
         pet_hash[:description].must_equal 'altered male ferret'
         pet_hash[:pic].must_equal 'http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=500&-x.jpg'
@@ -28,7 +28,7 @@ describe 'PetFetcher' do
 
   describe '.get_petharbor_pet' do
     it 'returns a hash of pet data when the request is successful' do
-      VCR.use_cassette('petharbor') do
+      VCR.use_cassette('petharbor', record: :once) do
           pet_hash = PetFetcher.get_petharbor_pet
           pet_hash[:description].must_equal 'neutered male white bichon frise'
           pet_hash[:pic].must_equal 'http://www.PetHarbor.com/get_image.asp?RES=Thumb&ID=A223117&LOCATION=DNVR'

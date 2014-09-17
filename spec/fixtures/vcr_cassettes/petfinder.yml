@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.petfinder.com/pet.getRandom?format=json&key=1b3dc6525bf82e42d3a64ddaa52860b2&output=full&shelterid=MA38
+    uri: http://api.petfinder.com/pet.getRandom?format=json&key=your_petfinder_key_goes_here&output=full&shelterid=MA38
     body:
       encoding: US-ASCII
       string: ''
