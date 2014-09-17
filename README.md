@@ -32,7 +32,7 @@ Edit a the local .env file by adding the appropriate config values. How to get T
     4. `heroku config:set access_token_secret="your_access_token_secret_goes_here"`
 5. Configure pet datasource
 
-Petfinder
+**Petfinder**
 
 Register for an account at [petfinder.com](https://www.petfinder.com/) and then get your [API key](https://www.petfinder.com/developers/api-key). To find the shelter id, find a shelter's page on petfinder.com. The id is the last two letters followed by three numbers in the shelter page url. i.e. For this shelter page, [http://www.petfinder.com/shelters/CA154.html](http://www.petfinder.com/shelters/CA154.html), the shelter id is CA154.
     Add Petfinder environment variables
@@ -41,8 +41,9 @@ Register for an account at [petfinder.com](https://www.petfinder.com/) and then 
     3. `heroku config:set petfinder_shelter_id="shelter_id_goes_here"`
     4. `heroku config:set pet_datasource="petfinder"`
 
-PetHarbor
-Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when clicking on the short like for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
+**PetHarbor**
+
+Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when    clicking on the short like for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
     Add Petharbor environment variables
     1. `heroku config:set petharbor_shelter_id="shelter_id_goes_here"`
     2. `heroku config:set pet_datasource="petharbor"`
