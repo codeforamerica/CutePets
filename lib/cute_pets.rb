@@ -1,5 +1,5 @@
-require 'cute_pets/pet_fetcher'
-require 'cute_pets/tweet_generator'
+require './lib/cute_pets/pet_fetcher'
+require './lib/cute_pets/tweet_generator'
 require 'dotenv'
 Dotenv.load
 

@@ -21,6 +21,7 @@ GEM
     minitest (5.4.1)
     multipart-post (2.0.0)
     naught (1.0.0)
+    rake (10.3.2)
     safe_yaml (1.0.3)
     simple_oauth (0.2.0)
     thread_safe (0.3.4)
@@ -47,6 +48,7 @@ DEPENDENCIES
   dotenv
   hpricot
   minitest
+  rake
   twitter
   vcr
   webmock
