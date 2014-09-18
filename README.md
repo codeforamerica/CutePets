@@ -6,7 +6,9 @@ Post a random adoptable pet from a shelter to a twitter feed
 
 Based off of Code for America's [CutePetsDenver](https://github.com/codeforamerica/cutepetsdenver) made by Team Denver.
 
-### Environmental variables
+## Set Up for Local Development
+
+### Environment variables
 Edit a the local .env file by adding the appropriate config values. How to get Twitter/PetHarbor/Petfinder config variables is stated below.
 
 ### Run
@@ -15,13 +17,15 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 ## Deployment
 
 ### Twitter
-1. Create a new [twitter app](https://apps.twitter.com/).
-2. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
-3. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
-4. Take note of the values for environment set up below.
+1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets 
+2. Create a new [twitter app](https://apps.twitter.com/).
+3. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
+4. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
+5. Take note of the values for environment set up below.
 *Note:* It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.
 
-### Heroku 
+### Heroku
+1. Create a [Heroku account](https://id.heroku.com/signup/www-header)
 1. Download and install the [Heroku Toolbelt](from: https://toolbelt.heroku.com).
 2. Create heroku project: `heroku create [app name]`
 3. Push code: `heroku push heroku master`
