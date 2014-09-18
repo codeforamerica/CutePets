@@ -26,7 +26,7 @@ module PetFetcher
         pic:   get_photo(pet_json),
         link:  "https://www.petfinder.com/petdetail/#{pet_json['id']['$t']}",
         name:  pet_json['name']['$t'].capitalize,
-        description: "#{pet_json['options']['option']['$t']} #{get_petfinder_sex(pet_json['sex']['$t'])} #{pet_json['breeds']['breed']['$t']}".downcase
+        description: "#{get_petfinder_option(pet_json['options'])} #{get_petfinder_sex(pet_json['sex']['$t'])} #{pet_json['breeds']['breed']['$t']}".downcase
       }
     else
       raise 'PetFinder api request failed'
@@ -73,6 +73,14 @@ private
 
   def get_petfinder_sex(sex_abbreviation)
     sex_abbreviation.downcase == 'f' ? 'female' : 'male'
+  end
+
+  def get_petfinder_option(option_hash)
+    if option_hash['option']
+      option_hash['option']['$t']
+    else
+      option_hash['$t']
+    end
   end
 
   def self.get_photo(pet)
