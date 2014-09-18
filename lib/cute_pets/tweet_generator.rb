@@ -1,7 +1,12 @@
 require 'twitter'
-require 'yaml'
 require 'open-uri'
-require 'tempfile'
+# This is terrible, but required. It resets a const in open-uri to guarantee that a File object
+# is always returned when open() is called. Without it, data less than 10k will cause open() to
+# return a StringIO object, which twitter can't handle.
+OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
+OpenURI::Buffer.const_set 'StringMax', 0
+
+require 'yaml'
 require 'dotenv'
 Dotenv.load
 
@@ -12,11 +17,6 @@ module TweetGenerator
 
   def tweet(message, pet_pic_url)
     pet_pic_img = open(pet_pic_url)
-    if pet_pic_img.is_a?(StringIO)
-      ext = File.extname(pet_pic_url)
-      name = File.basename(pet_pic_url, ext)
-      pet_pic_img = Tempfile.new([name, ext])
-    end
     client.update_with_media(message, pet_pic_img)
   end
 
