@@ -47,9 +47,11 @@ Edit a the local .env file by adding the appropriate config values. How to get T
             4. `heroku config:set pet_datasource="petfinder"`
     2. **PetHarbor**
         1. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when    clicking on the short like for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
-        2. Add Petharbor environment variables
+        2. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. If your shelter has cats, include 'cat' in pet types. If your shelter has dogs or other animals, include 'dog' or 'others' in your pet types as well. When setting the petharbor_pet_types heroku config variable, pet types must be separated with spaces.
+        3. Add Petharbor environment variables
             1. `heroku config:set petharbor_shelter_id="shelter_id_goes_here"`
-            2. `heroku config:set pet_datasource="petharbor"`
+            2. `heroku config:set petharbor_pet_types="cat dog others"`
+            3. `heroku config:set pet_datasource="petharbor"`
 6. Schedule tweets 
     1. Add the **Heroku Scheduler** add on: `heroku addons:add scheduler`
     2. Schedule tweets: `heroku addons:open scheduler`

@@ -76,7 +76,7 @@ private
   end
 
   def get_petharbor_pet_type
-    ['dog', 'cat', 'others'].sample
+    ENV.fetch('petharbor_pet_types').split.sample
   end
 
   def get_petfinder_option(option_hash)
