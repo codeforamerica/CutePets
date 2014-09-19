@@ -38,7 +38,7 @@ module PetFetcher
 
     params = {
       shelterlist: "\'#{ENV.fetch('petharbor_shelter_id')}\'",
-      type: 'dog',
+      type: get_petharbor_pet_type,
       availableonly: '1',
       showstat: '1',
       source: 'results'
@@ -73,6 +73,10 @@ private
 
   def get_petfinder_sex(sex_abbreviation)
     sex_abbreviation.downcase == 'f' ? 'female' : 'male'
+  end
+
+  def get_petharbor_pet_type
+    ['dog', 'cat', 'others'].sample
   end
 
   def get_petfinder_option(option_hash)
