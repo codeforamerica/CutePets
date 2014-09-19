@@ -1,0 +1,42 @@
+
+{
+	"type": "FeatureCollection",
+	"features": [
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "http://twitter.com/CutePetsDenver"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -104.992302 , 39.740009 ] 
+			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutiesInBoston"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -71.056740, 42.358662 ] 
+			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutePetsSF"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -122.419640, 37.777119 ] 
+			} 
+		}
+	]
+}
