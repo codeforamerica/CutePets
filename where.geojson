@@ -37,6 +37,18 @@
 				"type": "Point", 
 				"coordinates": [ -122.419640, 37.777119 ] 
 			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CuteBirdsInKC"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -94.583076, 39.102951 ] 
+			} 
 		}
 	]
 }
