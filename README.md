@@ -29,7 +29,7 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 1. Create a [Heroku account](https://id.heroku.com/signup/www-header)
 1. Download and install the [Heroku Toolbelt](from: https://toolbelt.heroku.com).
 2. Create heroku project: `heroku create [app name]`
-3. Push code: `heroku push heroku master`
+3. Push code: `git push heroku master`
 4. Add Twitter environment variables
     1. `heroku config:set consumer_key="your_consumer_key_goes_here"`
     2. `heroku config:set consumer_secret="your_consumer_secret_key_goes_here"`
