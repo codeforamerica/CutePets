@@ -18,10 +18,11 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 
 ### Twitter
 1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets 
-2. Create a new [twitter app](https://apps.twitter.com/).
-3. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
-4. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
-5. Take note of the values for environment set up below.
+2. Confirm your new account by email.
+3. Create a new [twitter app](https://apps.twitter.com/).
+4. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
+5. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
+6. Take note of the values for environment set up below.
 *Note:* It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.
 
 ### Heroku
