@@ -17,13 +17,13 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 ## Deployment
 
 ### Twitter
-1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets 
-2. Confirm your new account by email.
-3. Create a new [twitter app](https://apps.twitter.com/).
-4. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**.
-5. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
-6. Take note of the values for environment set up below.
-*Note:* It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.
+1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets
+2. Accept the confirmation email that Twitter sends you.
+3. Add and validate your phone number for your new Twitter account at https://twitter.com/settings/devices *Note: If your phone is already linked to another Twitter acct, then use a [Google Voice](https://www.google.com/voice/) number.*
+4. Create a new [twitter app](https://apps.twitter.com/).
+5. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**. *Note: It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.*
+6. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
+7. Take note of the values for environment set up below.
 
 ### Heroku
 1. Create a [Heroku account](https://id.heroku.com/signup/www-header)
@@ -31,8 +31,8 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 2. Create heroku project: `heroku create [app name]`
 3. Push code: `git push heroku master`
 4. Add Twitter environment variables
-    1. `heroku config:set consumer_key="your_consumer_key_goes_here"`
-    2. `heroku config:set consumer_secret="your_consumer_secret_key_goes_here"`
+    1. `heroku config:set api_key="your_consumer_key_goes_here"`
+    2. `heroku config:set api_secret="your_consumer_secret_key_goes_here"`
     3. `heroku config:set access_token="your_access_token_goes_here"`
     4. `heroku config:set access_token_secret="your_access_token_secret_goes_here"`
 5. Configure pet datasource
