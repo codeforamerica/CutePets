@@ -42,7 +42,7 @@ Edit a the local .env file by adding the appropriate config values. How to get T
         1. Register for an account at [petfinder.com](https://www.petfinder.com/) and then get your [API key](https://www.petfinder.com/developers/api-key). To find the shelter id, find a shelter's page on petfinder.com. The id is the last two letters followed by three numbers in the shelter page url. i.e. For this shelter page, [http://www.petfinder.com/shelters/CA154.html](http://www.petfinder.com/shelters/CA154.html), the shelter id is CA154.
         2. Add Petfinder environment variables.
             1. `heroku config:set petfinder_key="your_api_key_goes_here"`
-            2. `heroku config:set petfinder_key_secret="your_api_secret_goes_here"`
+            2. `heroku config:set petfinder_secret="your_api_secret_goes_here"`
             3. `heroku config:set petfinder_shelter_id="shelter_id_goes_here"`
             4. `heroku config:set pet_datasource="petfinder"`
     2. **PetHarbor**
