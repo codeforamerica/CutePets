@@ -59,7 +59,7 @@
 			"geometry": 
 			{ 
 				"type": "Point", 
-				"coordinates": [ 35.780556, -78.638889 ] 
+				"coordinates": [ -78.638889, 35.780556 ] 
 			} 
 		}
 	]
