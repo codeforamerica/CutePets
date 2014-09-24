@@ -49,6 +49,18 @@
 				"type": "Point", 
 				"coordinates": [ -94.583076, 39.102951 ] 
 			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CuteRaleighPets"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ 35.780556, -78.638889 ] 
+			} 
 		}
 	]
 }
