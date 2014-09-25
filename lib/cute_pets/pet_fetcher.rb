@@ -13,7 +13,7 @@ module PetFetcher
     params = {
       format:    'json',
       key:        ENV.fetch('petfinder_key'),
-      shelterid:  ENV.fetch('petfinder_shelter_id'),
+      shelterid:  get_petfinder_shelter_id,
       output:    'full'
     }
     uri.query = URI.encode_www_form(params)
@@ -37,7 +37,7 @@ module PetFetcher
     uri = URI('http://www.petharbor.com/petoftheday.asp')
 
     params = {
-      shelterlist: "\'#{ENV.fetch('petharbor_shelter_id')}\'",
+      shelterlist: "\'#{get_petharbor_shelter_id}\'",
       type: get_petharbor_pet_type,
       availableonly: '1',
       showstat: '1',
@@ -95,5 +95,24 @@ private
 
   def get_petharbor_sex(html_text)
     html_text =~ /female/i ? 'female' : 'male'
+  end
+
+  def get_petfinder_shelter_id
+    get_shelter_id(ENV.fetch('petfinder_shelter_id'))
+  end
+
+  def get_petharbor_shelter_id
+    get_shelter_id(ENV.fetch('petharbor_shelter_id'))
+  end
+
+  def get_shelter_id(id)
+    shelter_id = id
+    if shelter_id.nil?
+      shelter_id
+    elsif shelter_id.include? ','
+      shelter_id.split(',').sample
+    else
+      shelter_id
+    end
   end
 end
