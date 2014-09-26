@@ -61,6 +61,18 @@
 				"type": "Point", 
 				"coordinates": [ -78.638889, 35.780556 ] 
 			} 
+		},
+		{
+			"type": "Feature",
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutePetsNorfolk"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -76.2000, 36.9167 ] 
+			}
 		}
 	]
 }
