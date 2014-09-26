@@ -44,4 +44,40 @@ describe 'PetFetcher' do
     stub_request(:get, /^http\:\/\/www\.petharbor\.com\/petoftheday\.asp/).to_return(:status => 500)
     lambda { PetFetcher.get_petharbor_pet }.must_raise RuntimeError
   end
+
+  describe 'get_petfinder_option' do
+    it 'uses friendly values' do
+      PetFetcher.send(:get_petfinder_option, {"option" => {"$t" => "housebroken"}}).must_equal 'house trained'
+      PetFetcher.send(:get_petfinder_option, {"option" => {"$t" => "housetrained"}}).must_equal 'house trained'
+      PetFetcher.send(:get_petfinder_option, {"option" => {"$t" => "noClaws"}}).must_equal 'declawed'
+      PetFetcher.send(:get_petfinder_option, {"option" => {"$t" => "altered"}}).must_equal 'altered'
+    end
+
+    it 'handles multiple values in the options hash' do
+      PetFetcher.send(:get_petfinder_option,
+                      {"option" => [{"$t" => "hasShots"},
+                                    {"$t" => "noClaws"}]}).must_equal 'declawed'
+    end
+
+    it 'ignores some possible values' do
+      PetFetcher.send(:get_petfinder_option,
+                      {"option" => [{"$t" => "hasShots"},
+                                    {"$t" => "noCats"},
+                                    {"$t" => "noDogs"},
+                                    {"$t" => "noKids"},
+                                    {"$t" => "totally not in the xsd"},
+                      ]}).must_equal nil
+
+    end
+  end
+
+  describe 'get_petfinder_breed' do
+    it 'works with a single hash' do
+      PetFetcher.send(:get_petfinder_breed, {"breed" => {"$t" => "Spaniel"}}).must_equal 'Spaniel'
+    end
+
+    it 'works with an array of hashes' do
+      PetFetcher.send(:get_petfinder_breed, {"breed" => [{"$t" => "Spaniel"}, {"$t" => "Pomeranian"}]}).must_equal 'Spaniel/Pomeranian mix'
+    end
+  end
 end
