@@ -98,6 +98,18 @@
 				"type": "Point", 
 				"coordinates": [ -78.638889, 35.780556 ] 
 			} 
-		}
+		},
+		{
+            "type": "Feature",
+        	"properties":
+        	{
+        	    "twitter" : "https://twitter.com/CutePetsMSP"
+        	},
+        	"geometry":
+        	{
+        	    "type": "Point",
+        		"coordinates": [ -93.2667, 44.9833 ]
+        	}
+        }
 	]
 }
