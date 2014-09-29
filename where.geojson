@@ -100,16 +100,28 @@
 			} 
 		},
 		{
-            "type": "Feature",
-        	"properties":
-        	{
-        	    "twitter" : "https://twitter.com/CutePetsMSP"
-        	},
-        	"geometry":
-        	{
-        	    "type": "Point",
-        		"coordinates": [ -93.2667, 44.9833 ]
-        	}
-        }
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/CutePetsMSP"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -93.2667, 44.9833 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutePetsNorfolk"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -76.2000, 36.9167 ] 
+			}
+		}
 	]
 }
