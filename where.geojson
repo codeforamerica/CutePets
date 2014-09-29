@@ -2,16 +2,53 @@
 {
 	"type": "FeatureCollection",
 	"features": [
+		
 		{ 
 			"type": "Feature", 
 			"properties": 
 			{ 
-				"twitter" : "http://twitter.com/CutePetsDenver"
+				"twitter" : "http://twitter.com/CutePetsAdamsCo"
 			}, 
 			"geometry": 
 			{ 
 				"type": "Point", 
-				"coordinates": [ -104.992302 , 39.740009 ] 
+				"coordinates": [ -104.871902 , 39.891651 ] 
+			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "http://twitter.com/CutePetsMSP"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -93.1721599, 44.9754171 ] 
+			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "http://twitter.com/CutePetsCHA"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -85.249443 , 35.1067797 ] 
+			} 
+		},
+		{ 
+			"type": "Feature", 
+			"properties": 
+			{ 
+				"twitter" : "http://twitter.com/CuteRaleighPets"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -78.6294166, 35.8195622 ] 
 			} 
 		},
 		{ 
