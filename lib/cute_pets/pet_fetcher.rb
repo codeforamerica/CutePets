@@ -125,13 +125,6 @@ private
   end
 
   def get_shelter_id(id)
-    shelter_id = id
-    if shelter_id.nil?
-      shelter_id
-    elsif shelter_id.include? ','
-      shelter_id.split(',').sample
-    else
-      shelter_id
-    end
+    id.split(',').sample
   end
 end
