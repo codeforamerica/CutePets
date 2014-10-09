@@ -55,4 +55,5 @@ Edit a the local .env file by adding the appropriate config values. How to get T
     1. Add the **Heroku Scheduler** add on: `heroku addons:add scheduler`
     2. Schedule tweets: `heroku addons:open scheduler`
     3. In the task field: `rake tweet_pet`.
-
+7. Add your new deployment to the official list
+    1. open where.geojson and add your listing
