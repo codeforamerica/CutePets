@@ -122,6 +122,18 @@
 				"type": "Point", 
 				"coordinates": [ -76.2000, 36.9167 ] 
 			}
+		},
+		{
+			"type": "Feature",
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutePetsANC"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -30.1000, 61.2167 ] 
+			}
 		}
 	]
 }
