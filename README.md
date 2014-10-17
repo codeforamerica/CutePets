@@ -37,7 +37,7 @@ Edit a the local .env file by adding the appropriate config values. How to get T
     2. `heroku config:set api_secret="your_consumer_secret_key_goes_here"`
     3. `heroku config:set access_token="your_access_token_goes_here"`
     4. `heroku config:set access_token_secret="your_access_token_secret_goes_here"`
-5. Configure pet datasource
+5. Configure pet datasource–you have two options (below). Search on Petfinder for your shelter and use that if you find it, otherwise look on PetHarbor. 
     1. **Petfinder**
         1. Register for an account at [petfinder.com](https://www.petfinder.com/) and then get your [API key](https://www.petfinder.com/developers/api-key). To find the shelter id, find a shelter's page on petfinder.com. The id is the last two letters followed by three numbers in the shelter page url. i.e. For this shelter page, [http://www.petfinder.com/shelters/CA154.html](http://www.petfinder.com/shelters/CA154.html), the shelter id is CA154.
         2. Add Petfinder environment variables.
@@ -45,7 +45,7 @@ Edit a the local .env file by adding the appropriate config values. How to get T
             2. `heroku config:set petfinder_shelter_id="shelter_id_goes_here"`
             3. `heroku config:set pet_datasource="petfinder"`
     2. **PetHarbor**
-        1. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when    clicking on the short like for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
+        1. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when    clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
         2. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. If your shelter has cats, include 'cat' in pet types. If your shelter has dogs or other animals, include 'dog' or 'others' in your pet types as well. When setting the petharbor_pet_types heroku config variable, pet types must be separated with spaces.
         3. Add Petharbor environment variables
             1. `heroku config:set petharbor_shelter_id="shelter_id_goes_here"`
@@ -55,4 +55,5 @@ Edit a the local .env file by adding the appropriate config values. How to get T
     1. Add the **Heroku Scheduler** add on: `heroku addons:add scheduler`
     2. Schedule tweets: `heroku addons:open scheduler`
     3. In the task field: `rake tweet_pet`.
-
+7. Add your new deployment to the official list
+    1. open [where.geojson](https://github.com/codeforamerica/CutePets/blob/master/where.geojson) and add your listing
