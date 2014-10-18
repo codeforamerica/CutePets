@@ -17,6 +17,18 @@
 		},
 		{ 
 			"type": "Feature", 
+			"properties":
+			{
+				"twitter" : "http://twitter.com/CutePetsANC"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -30.1000, 61.2167 ]
+			}
+		},
+		{
+			"type": "Feature",
 			"properties": 
 			{ 
 				"twitter" : "http://twitter.com/CutePetsMSP"
