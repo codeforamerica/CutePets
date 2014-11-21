@@ -13,7 +13,7 @@ module PetFetcher
     params = {
       format:    'json',
       key:        ENV.fetch('petfinder_key'),
-      shelterid:  get_petfinder_shelter_id),
+      shelterid:  get_petfinder_shelter_id,
       output:    'full'
     }
     uri.query = URI.encode_www_form(params)
