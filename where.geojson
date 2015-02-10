@@ -146,6 +146,18 @@
 				"type": "Point", 
 				"coordinates": [ -98.590635, 29.415142 ] 
 			}
-		}		
+		},
+				{
+			"type": "Feature",
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/AtlantaCutePets"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [  -84.3925952911377, 33.7453962306953 ] 
+			}
+		}
 	]
 }
