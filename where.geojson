@@ -146,6 +146,18 @@
 				"type": "Point", 
 				"coordinates": [ -98.590635, 29.415142 ] 
 			}
+		},
+		{
+			"type": "Feature",
+			"properties": 
+			{ 
+				"twitter" : "https://twitter.com/CutePetsTucson"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -110.9264, 32.2217 ] 
+			}
 		}		
 	]
 }
