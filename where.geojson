@@ -170,6 +170,42 @@
 				"type": "Point",
 				"coordinates": [ -149.863129, 61.217381 ]
 			}
+		},
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/cutepetsaustin"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -97.7534014, 30.3077609 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/CutePetsDenver"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -104.8551114, 39.7643389 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/CutePetsPtown"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -76.3558621, 36.8685605 ]
+			}
 		}
 	]
 }
