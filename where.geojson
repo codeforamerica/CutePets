@@ -17,6 +17,18 @@
 		},
 		{ 
 			"type": "Feature", 
+			"properties":
+			{
+				"twitter" : "http://twitter.com/CutePetsANC"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -30.1000, 61.2167 ]
+			}
+		},
+		{
+			"type": "Feature",
 			"properties": 
 			{ 
 				"twitter" : "http://twitter.com/CutePetsMSP"
@@ -139,6 +151,18 @@
 			"type": "Feature",
 			"properties": 
 			{ 
+				"twitter" : "https://twitter.com/CutePetsANC"
+			}, 
+			"geometry": 
+			{ 
+				"type": "Point", 
+				"coordinates": [ -149.806182, 61.178109 ] 
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": 
+			{ 
 				"twitter" : "https://twitter.com/CutePetsSA"
 			}, 
 			"geometry": 
@@ -159,5 +183,6 @@
 				"coordinates": [ -110.9264, 32.2217 ] 
 			}
 		}		
+>>>>>>> 6f7bdab22c808f208ef9348223effdeab5c09464
 	]
 }
