@@ -19,18 +19,6 @@
 			"type": "Feature", 
 			"properties": 
 			{ 
-				"twitter" : "http://twitter.com/CutePetsMSP"
-			}, 
-			"geometry": 
-			{ 
-				"type": "Point", 
-				"coordinates": [ -93.1721599, 44.9754171 ] 
-			} 
-		},
-		{ 
-			"type": "Feature", 
-			"properties": 
-			{ 
 				"twitter" : "http://twitter.com/CutePetsCHA"
 			}, 
 			"geometry": 
