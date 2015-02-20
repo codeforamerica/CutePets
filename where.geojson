@@ -194,6 +194,18 @@
 				"type": "Point",
 				"coordinates": [ -76.3558621, 36.8685605 ]
 			}
+		},
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/indycutepets"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -86.153939, 39.768002 ]
+			}
 		}
 	]
 }
