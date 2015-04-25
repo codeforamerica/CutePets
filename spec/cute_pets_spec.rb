@@ -15,7 +15,7 @@ describe 'CutePets' do
       ENV.stub :fetch, 'petfinder' do
         PetFetcher.stub(:get_petfinder_pet, @pet_hash) do
           TweetGenerator.stub(:tweet, nil, [String, String]) do
-            CutePets.post_pet
+            CutePets.post_pet_twitter
           end
         end
       end
@@ -25,7 +25,7 @@ describe 'CutePets' do
       ENV.stub :fetch, 'petharbor' do
         PetFetcher.stub(:get_petharbor_pet, @pet_hash) do
           TweetGenerator.stub(:tweet, nil, [String, String]) do
-            CutePets.post_pet
+            CutePets.post_pet_twitter
           end
         end
       end
