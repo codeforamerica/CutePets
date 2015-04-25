@@ -18,6 +18,12 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 
 ## Deployment
 
+### Facebook
+1. Create a [facebook account](https://facebook.com) with the information you'd like to have when streaming your pet tweets
+2. Get an [auth token](https://developers.facebook.com/tools/explorer).
+3. On the **Get Token** drop-down, select it and choose **Get Access Token**, press on the tab for **Extended Permissions** and put a check in the box for **publish_actions**
+4. Take note of the **Access Token** for environment set up below.
+
 ### Twitter
 1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets
 2. Accept the confirmation email that Twitter sends you.
@@ -32,12 +38,14 @@ Edit a the local .env file by adding the appropriate config values. How to get T
 1. Download and install the [Heroku Toolbelt](from: https://toolbelt.heroku.com).
 2. Create heroku project: `heroku create [app name]`
 3. Push code: `git push heroku master`
-4. Add Twitter environment variables
+4. Add Facebook environment variables
+    1. `heroku config:set oauth_access_token="your_access_token_goes_here"`
+5. Add Twitter environment variables
     1. `heroku config:set api_key="your_consumer_key_goes_here"`
     2. `heroku config:set api_secret="your_consumer_secret_key_goes_here"`
     3. `heroku config:set access_token="your_access_token_goes_here"`
     4. `heroku config:set access_token_secret="your_access_token_secret_goes_here"`
-5. Configure pet datasource–you have two options (below). Search on Petfinder for your shelter and use that if you find it, otherwise look on PetHarbor. 
+6. Configure pet datasource–you have two options (below). Search on Petfinder for your shelter and use that if you find it, otherwise look on PetHarbor.
     1. **Petfinder**
         1. Register for an account at [petfinder.com](https://www.petfinder.com/) and then get your [API key](https://www.petfinder.com/developers/api-key). To find the shelter id, find a shelter's page on petfinder.com. The id is the last two letters followed by three numbers in the shelter page url. i.e. For this shelter page, [http://www.petfinder.com/shelters/CA154.html](http://www.petfinder.com/shelters/CA154.html), the shelter id is CA154.
         2. Add Petfinder environment variables.
@@ -51,9 +59,11 @@ Edit a the local .env file by adding the appropriate config values. How to get T
             1. `heroku config:set petharbor_shelter_id="shelter_id_goes_here"`
             2. `heroku config:set petharbor_pet_types="cat dog others"`
             3. `heroku config:set pet_datasource="petharbor"`
-6. Schedule tweets 
+7. Schedule tweets
     1. Add the **Heroku Scheduler** add on: `heroku addons:add scheduler`
     2. Schedule tweets: `heroku addons:open scheduler`
     3. In the task field: `rake tweet_pet`.
-7. Add your new deployment to the official list
+8. Schedule posts
+    1. Like in the previous step, in the task field add: `rake post_pet`.
+9. Add your new deployment to the official list
     1. open [where.geojson](https://github.com/codeforamerica/CutePets/blob/master/where.geojson) and add your listing
