@@ -117,12 +117,9 @@ private
   end
 
   def get_petfinder_shelter_id
-    ids = ENV.fetch('petfinder_shelter_id')
-    if ids
-      get_shelter_id(ids)
-    else
-      get_local_shelter_ids
-    end
+    get_shelter_id(ENV.fetch('petfinder_shelter_id'))
+  rescue KeyError
+    get_local_shelter_ids
   end
 
   def get_petharbor_shelter_id
@@ -145,8 +142,8 @@ private
 
     if response.kind_of? Net::HTTPSuccess
       json = JSON.parse(response.body)
-      shelters_json  = json['petfinder']['shelters']
-      shelters_json.map { |shelter| shelter['id'] }.sample
+      shelters_json  = json['petfinder']['shelters']['shelter']
+      shelters_json.each.map { |shelter| shelter['id']['$t'] }.sample
     else
       raise 'PetFinder api request failed'
     end
