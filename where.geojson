@@ -219,6 +219,18 @@
 				"coordinates": [ -85.7667, 38.2500 ]
 			}
 		},
+                {
+                        "type": "Feature",
+                        "properties":
+                        {
+                                "twitter" : "https://twitter.com/cutepetslex"
+                        },
+                        "geometry":
+                        {
+                                "type": "Point",
+                                "coordinates": [ -84.494722, 38.029722 ]
+                        }
+                },
 		{
 			"type": "Feature",
 			"properties":
