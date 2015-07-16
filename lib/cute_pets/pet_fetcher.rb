@@ -21,6 +21,14 @@ module PetFetcher
 
     if response.kind_of? Net::HTTPSuccess
       json = JSON.parse(response.body)
+      status_message = json['petfinder']['header']['status']['message']['$t']
+      if status_message == 'shelter opt-out'
+        raise 'The chosen shelter opted out of being accesible via the API'
+      elsif status_message == 'unauthorized key'
+        raise 'Check that your Petfinder API key is configured correctly'
+      elsif status_message
+        raise status_message
+      end
       pet_json  = json['petfinder']['pet']
       {
         pic:   get_photo(pet_json),
