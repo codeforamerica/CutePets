@@ -266,6 +266,18 @@
         "type": "Point",
         "coordinates": [  -84.3925952911377, 33.7453962306953 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsBHM"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -86.801728, 33.520648 ]
+      }
     }
 	]
 }
