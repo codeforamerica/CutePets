@@ -278,6 +278,18 @@
         "type": "Point",
         "coordinates": [ -86.801728, 33.520648 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/petschemnitz"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ 12.9252977, 50.8322608 ]
+      }
     }
 	]
 }
