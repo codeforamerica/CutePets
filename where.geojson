@@ -231,6 +231,18 @@
                                 "coordinates": [ -84.494722, 38.029722 ]
                         }
                 },
+                {
+                        "type": "Feature",
+                        "properties":
+                        {
+                                "twitter" : "https://twitter.com/cutepetsnola"
+                        },
+                        "geometry":
+                        {
+                                "type": "Point",
+                                "coordinates": [ -89.935135, 30.308489 ]
+                        }
+                },
 		{
 			"type": "Feature",
 			"properties":
