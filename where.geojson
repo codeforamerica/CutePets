@@ -326,6 +326,18 @@
         "type": "Point",
         "coordinates": [ -87.570555, 33.210795 ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsNYC"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -73.9604, 40.7684 ]
+      }    
     }
 	]
 }
