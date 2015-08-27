@@ -338,6 +338,18 @@
         "type": "Point",
         "coordinates": [ -73.9604, 40.7684 ]
       }    
+    },
+        {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsCologne"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ 6.956944, 50.938056 ]
+      }    
     }
 	]
 }
