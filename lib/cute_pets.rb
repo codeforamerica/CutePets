@@ -16,9 +16,9 @@ module CutePets
 
   def get_history
     history_filepath = File.expand_path(ENV.fetch("history_file"))
-    history = File.file?(history_filepath) ? File.readlines(history_filepath) : []
+    File.file?(history_filepath) ? File.readlines(history_filepath) : []
   end
-  
+
   def append_history(text)
     history_filepath = File.expand_path(ENV.fetch("history_file"))
     File.open(history_filepath, "a") do |f|
