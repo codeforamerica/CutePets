@@ -14,32 +14,31 @@ module CutePets
     end
   end
 
+  def get_history
+    history_filepath = File.expand_path(ENV.fetch("history_file"))
+    history = File.file?(history_filepath) ? File.readlines(history_filepath) : []
+  end
+  
+  def append_history(text)
+    history_filepath = File.expand_path(ENV.fetch("history_file"))
+    File.open(history_filepath, "a") do |f|
+      f.puts text
+    end
+  end
+
   def post_pet
     pet = nil
     pet = fetch_pet
-    # Check that we haven't tweeted this pet before.
-    history_file = ENV.fetch("history_file")
-    history_filepath = File.expand_path(history_file)
-    if File.file?(history_filepath)
-      num_tries = ENV.fetch("number_tries").to_i
-      history = File.readlines(history_filepath)
-      num_tries.times do
-        new_pet = true
-        history.each do |url|
-          if url.strip == pet[:link]
-            new_pet = false
-            break
-          end
-        end
-        break if new_pet
-        pet = fetch_pet
-      end
+    num_tries = ENV.fetch("number_tries").to_i
+    history = get_history
+    # Try a few times to find one we haven't tweeted before.
+    num_tries.times do
+      break unless history.include?(pet[:link] + "\n")
+      pet = fetch_pet
     end
 
     if pet
-      File.open(history_filepath, "a") do |f|
-        f.puts pet[:link]
-      end
+      append_history(pet[:link])
       message = TweetGenerator.create_message(pet[:name], pet[:description], pet[:link])
       TweetGenerator.tweet(message, pet[:pic])
     end
