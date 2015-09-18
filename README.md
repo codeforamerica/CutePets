@@ -50,8 +50,7 @@ This will be our free rented computer in the sky. It will run the code that grab
 
 1. Heroku install instructions
 
-
-
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 6. Schedule tweets 
     1. Got to addons page and In the task field: `rake tweet_pet`.
