@@ -28,8 +28,8 @@ We're scraping info from Petharbor to make our Twitter bot.
 
 1. Search on [petharbor.com](http://www.petharbor.com) for a shelter in your town.
 2. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is `BRKL`.
-2. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. It should be `cat` `dog` or `others`.
-3. We'll need this info in a few minutes, keep it around.
+3. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. It should be `cat` `dog` or `others`.
+4. We'll need this info in a few minutes, keep it around.
 
 
 #### Twitter
@@ -58,12 +58,14 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 5. Enter in the Twitter values
 6. Enter in the Petharbor values
 7. Enter in your credit card info. You will **NOT** be charged.
-8. You should be brought to the Heroku Scheduler page. Click on "Add a job"
-9. In the text box, copy and paste `rake tweet_pet`.
-10. Keep the dyno size at free. Set the frequency at daily.
-11. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
-12. Wait for it, wait for it.
-13. Yeah! You did it!
+8. Click on "Manage App"
+9. Click on "Heroku Scheduler"
+10. Click on "Add new job"
+11. In the text box, copy and paste `rake tweet_pet`.
+12. Keep the dyno size at free. Set the frequency at daily.
+13. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
+14. Wait for it, wait for it.
+15. Yeah! You did it!
 
 #### Github
 Great work. Now, tell us which city you made a cutepets bot for. We do this by sending in a Pull Request with our twitter bot's name and location.
@@ -71,7 +73,7 @@ Great work. Now, tell us which city you made a cutepets bot for. We do this by s
 1. Make a new [Github Account](https://github.com/join).
 2. Check out the map on the [CutePets Repo](https://github.com/codeforamerica/CutePets/blob/master/where.geojson)
 3. We want to add our own point to the map. We'll need the latitude and longitude for our city. Try using [Bing Maps](https://www.bing.com/maps/) or [http://www.latlong.net/](http://www.latlong.net/) to easily find them.
- 4. Edit the where.geojson file using [this link](https://github.com/codeforamerica/CutePets/edit/master/where.geojson).
+4. Edit the where.geojson file using [this link](https://github.com/codeforamerica/CutePets/edit/master/where.geojson).
 5. Add in your twitter bot's name and location using the format below. Note that the negative longitude goes first. Be sure to have that comma at the very end too.
 ```
 		{
