@@ -33,5 +33,7 @@
   },
   "addons": [
     "scheduler"
-  ]
+  ],
+  "success_url" : "https://scheduler.heroku.com/dashboard"
+
 }
