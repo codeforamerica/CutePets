@@ -58,18 +58,35 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 5. Enter in the Twitter values
 6. Enter in the Petharbor values
 7. Enter in your credit card info. You will **NOT** be charged.
-8. Click on "Manage the app"
+8. You should be brought to the Heroku Scheduler page. Click on "Add a job"
+9. In the text box, copy and paste `rake tweet_pet`.
+10. Keep the dyno size at free. Set the frequency at daily.
+11. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
+12. Wait for it, wait for it.
+13. Yeah! You did it!
 
+#### Github
+Great work. Now, tell us which city you made a cutepets bot for. We do this by sending in a Pull Request with our twitter bot's name and location.
 
-
-
-
-
-
-6. Schedule tweets
-    1. Got to addons page and In the task field: `rake tweet_pet`.
-
-
-
-### Run
-`rake tweet_pet`
+1. Make a new [Github Account](https://github.com/join).
+2. Check out the map on the [CutePets Repo](https://github.com/codeforamerica/CutePets/blob/master/where.geojson)
+3. We want to add our own point to the map. We'll need the latitude and longitude for our city. Try using [Bing Maps](https://www.bing.com/maps/) or [http://www.latlong.net/](http://www.latlong.net/) to easily find them.
+ 4. Edit the where.geojson file using [this link](https://github.com/codeforamerica/CutePets/edit/master/where.geojson).
+5. Add in your twitter bot's name and location using the format below. Note that the negative longitude goes first. Be sure to have that comma at the very end too.
+```
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "http://twitter.com/CutePetsAdamsCo"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -104.871902 , 39.891651 ]
+			}
+		},
+```
+6. Click "Propose Changes" at the bottom of the page.
+7. Click "Create Pull Request"
+8. That's it! Thanks!
