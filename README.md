@@ -53,7 +53,7 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 
 1. Create a [Heroku account](https://id.heroku.com/signup/www-header)
 2. Confirm the email they send you.
-3. Cick here -> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/codeforamerica/cutepets/tree/simple-instructions)
+3. Cick here -> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/codeforamerica/cutepets)
 4. Give your new app a unique name. Try the same name as your Twitter account.
 5. Enter in the Twitter values
 6. Enter in the Petharbor values
