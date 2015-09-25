@@ -70,7 +70,7 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 #### Github
 Great work. Now, tell us which city you made a cutepets bot for. We do this by sending in a Pull Request with our twitter bot's name and location.
 
-1. Make a new [Github Account](https://github.com/join).
+1. Make a new [Github Account](https://github.com/join). Choose the **free** account plan.
 2. Check out the map on the [CutePets Repo](https://github.com/codeforamerica/CutePets/blob/master/where.geojson)
 3. We want to add our own point to the map. We'll need the latitude and longitude for our city. Try using [Bing Maps](https://www.bing.com/maps/) or [http://www.latlong.net/](http://www.latlong.net/) to easily find them.
 4. Edit the where.geojson file using [this link](https://github.com/codeforamerica/CutePets/edit/master/where.geojson).
