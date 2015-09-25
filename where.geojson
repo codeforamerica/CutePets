@@ -3,6 +3,18 @@
 	"type": "FeatureCollection",
 	"features": [
 		
+		{
+            		"type": "Feature",
+        		"properties":
+            		{
+                		"twitter" : "https://twitter.com/CutePetsLOLakes"
+            		},
+            		"geometry":
+            		{
+                		"type": "Point",
+                		"coordinates": [ -82.457550, 28.223270 ]
+            		}
+        	},
 		{ 
 			"type": "Feature", 
 			"properties": 
