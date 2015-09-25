@@ -37,7 +37,7 @@ First we'll make a new twitter account, then we'll set up the 'bot' side of thin
 
 1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets
 2. Add your phone number. If your phone number ia already attached to your personal Twitter account, you've got two options:
-    * Quickest way is to make a new temporary phone number using [Google Voice](https://www.google.com/voice).
+    * Quickest way is to make a new temporary phone number using [Google Voice](https://www.google.com/voice) or [BurnerApp](http://www.burnerapp.com/).
     * Create the new twitter app on your personal accountthen transfer the API key to the new bot account [here](https://support.twitter.com/forms/platform) by selecting “I need to transfer an API key to another account”, filling out the form, and waiting a few days.
 3. Accept the confirmation email that Twitter sends you.
 4. Create a new [twitter app](https://apps.twitter.com/).
