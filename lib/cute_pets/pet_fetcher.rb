@@ -17,9 +17,11 @@ module PetFetcher
       output:    'full'
     }
     uri.query = URI.encode_www_form(params)
+    log_uri(uri)
     response = Net::HTTP.get_response(uri)
 
     if response.kind_of? Net::HTTPSuccess
+      log_response(response)
       json = JSON.parse(response.body)
       status_message = json['petfinder']['header']['status']['message']['$t']
       if status_message == 'shelter opt-out'
@@ -52,8 +54,10 @@ module PetFetcher
       source: 'results'
     }
     uri.query = URI.encode_www_form(params)
+    log_uri(uri)
     response = Net::HTTP.get_response(uri)
     if response.kind_of? Net::HTTPSuccess
+      log_response(response)
       # The html response comes wrapped in some js :(
       response_html = response.body.gsub(/^document.write\s+\(\"/, '')
       response_html = response_html.gsub(/\"\);/, '')
@@ -134,5 +138,13 @@ private
 
   def get_shelter_id(id)
     id.split(',').sample
+  end
+
+  def log_uri(uri)
+    puts "URI: #{uri}"
+  end
+
+  def log_response(response)
+    puts "Response: #{response.body}"
   end
 end
