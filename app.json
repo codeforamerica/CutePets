@@ -20,7 +20,7 @@
       "description": "Your Twitter access token secret goes here"
     },
     "petharbor_shelter_id": {
-      "description": "The id of the pet harbpr shelter"
+      "description": "The id of the pet harbor shelter"
     },
     "petharbor_pet_types": {
       "description": "The types of pets to search for ('dog', 'cat', or 'others', separated by spaces)",
