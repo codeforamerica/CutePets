@@ -2,68 +2,93 @@ CutePets
 ========
 
 Post a random adoptable pet from a shelter to a twitter feed
--------------------------------------------------------------------
+------------------------------------------------------------
 
 Based off of Code for America's [CutePetsDenver](https://github.com/codeforamerica/cutepetsdenver) made by Team Denver.
 
-Example twitter feed: [http://www.twitter.com/ericapets](http://www.twitter.com/ericapets)
+CutePetsDenver Twitter feed: [https://twitter.com/CutePetsDenver](https://twitter.com/CutePetsDenver)
 
-## Set Up for Local Development
+![https://twitter.com/CutePetsDenver](http://i.imgur.com/TMKG80L.png)
 
-### Environment variables
-Edit a the local .env file by adding the appropriate config values. How to get Twitter/PetHarbor/Petfinder config variables is stated below.
+## Get Your Own!
+We've tried to make this as simple as possible. You'll be setting up a few _free_ online accounts, connecting them together, then you'll get your very own CutePets twitter bot. Its painless and takes about an hour. Lets go.
 
-### Run
-`rake tweet_pet`
 
-## Deployment
+### Instructions
+#### Summary:
+* We'll find an animal shelter we want to help get pets adopted from.
+* We'll set up a new Twitter account for these CutePets.
+* We'll create a bot that regularly posts the pets pictures and info.
 
-### Facebook
-1. Create a [facebook account](https://facebook.com) with the information you'd like to have when streaming your pet tweets
-2. Get an [auth token](https://developers.facebook.com/tools/explorer).
-3. On the **Get Token** drop-down, select it and choose **Get Access Token**, press on the tab for **Extended Permissions** and put a check in the box for **publish_actions**
-4. Take note of the **Access Token** for environment set up below.
+#### Requirements
+This service requires a credit card to get set up. This card will **NOT** be charged.
 
-### Twitter
+#### Petharbor
+We're scraping info from Petharbor to make our Twitter bot.
+
+1. Search on [petharbor.com](http://www.petharbor.com) for a shelter in your town.
+2. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is `BRKL`.
+3. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. It should be `cat` `dog` or `others`.
+4. We'll need this info in a few minutes, keep it around.
+
+
+#### Twitter
+First we'll make a new twitter account, then we'll set up the 'bot' side of things.
+
 1. Create a [twitter account](https://twitter.com/signup) with the user name you'd like to have stream your pet tweets
-2. Accept the confirmation email that Twitter sends you.
-3. Add and validate your phone number for your new Twitter account at https://twitter.com/settings/devices *Note: If your phone is already linked to another Twitter acct, then use a [Google Voice](https://www.google.com/voice/) number.*
+2. Add your phone number. If your phone number ia already attached to your personal Twitter account, you've got two options:
+    * Quickest way is to make a new temporary phone number using [Google Voice](https://www.google.com/voice) or [BurnerApp](http://www.burnerapp.com/).
+    * Create the new twitter app on your personal accountthen transfer the API key to the new bot account [here](https://support.twitter.com/forms/platform) by selecting “I need to transfer an API key to another account”, filling out the form, and waiting a few days.
+3. Accept the confirmation email that Twitter sends you.
 4. Create a new [twitter app](https://apps.twitter.com/).
-5. On the API key tab for the Twitter app, modify permissions so the app can **Read and Write**. *Note: It's important to change permissions to Read/Write before generating the access token. The access token is keyed for the specific access level and will not be updated when changing permissions.*
-6. Create an access token. On the API Key tab in Twitter for the app, click **Create my access token**
-7. Take note of the values for environment set up below.
+5. For Website, use the new twitter account you just made, https://twitter.com/cutepetstester or whatever
+6. Leave callback url blank
+7. Accept Developer Agreement
+8. Go to the Keys & Access Token tab
+9. Create an Access Token
+10. Good work so far. We're going to need all of these values soon, so keep this window open or write them down.
 
-### Heroku
+#### Heroku
+This is where we'll turn on a free rented computer in the sky. It will run the code that grabs the info about animals from Petharbor, then tells Twitter to tweet about them.
+
 1. Create a [Heroku account](https://id.heroku.com/signup/www-header)
-1. Download and install the [Heroku Toolbelt](from: https://toolbelt.heroku.com).
-2. Create heroku project: `heroku create [app name]`
-3. Push code: `git push heroku master`
-4. Add Facebook environment variables
-    1. `heroku config:set oauth_access_token="your_access_token_goes_here"`
-5. Add Twitter environment variables
-    1. `heroku config:set api_key="your_consumer_key_goes_here"`
-    2. `heroku config:set api_secret="your_consumer_secret_key_goes_here"`
-    3. `heroku config:set access_token="your_access_token_goes_here"`
-    4. `heroku config:set access_token_secret="your_access_token_secret_goes_here"`
-6. Configure pet datasource–you have two options (below). Search on Petfinder for your shelter and use that if you find it, otherwise look on PetHarbor.
-    1. **Petfinder**
-        1. Register for an account at [petfinder.com](https://www.petfinder.com/) and then get your [API key](https://www.petfinder.com/developers/api-key). To find the shelter id, find a shelter's page on petfinder.com. The id is the last two letters followed by three numbers in the shelter page url. i.e. For this shelter page, [http://www.petfinder.com/shelters/CA154.html](http://www.petfinder.com/shelters/CA154.html), the shelter id is CA154.
-        2. Add Petfinder environment variables.
-            1. `heroku config:set petfinder_key="your_api_key_goes_here"`
-            2. `heroku config:set petfinder_shelter_id="shelter_id_goes_here"`
-            3. `heroku config:set pet_datasource="petfinder"`
-    2. **PetHarbor**
-        1. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when    clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is BRKL.
-        2. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. If your shelter has cats, include 'cat' in pet types. If your shelter has dogs or other animals, include 'dog' or 'others' in your pet types as well. When setting the petharbor_pet_types heroku config variable, pet types must be separated with spaces.
-        3. Add Petharbor environment variables
-            1. `heroku config:set petharbor_shelter_id="shelter_id_goes_here"`
-            2. `heroku config:set petharbor_pet_types="cat dog others"`
-            3. `heroku config:set pet_datasource="petharbor"`
-7. Schedule tweets
-    1. Add the **Heroku Scheduler** add on: `heroku addons:add scheduler`
-    2. Schedule tweets: `heroku addons:open scheduler`
-    3. In the task field: `rake tweet_pet`.
-8. Schedule posts
-    1. Like in the previous step, in the task field add: `rake post_pet`.
-9. Add your new deployment to the official list
-    1. open [where.geojson](https://github.com/codeforamerica/CutePets/blob/master/where.geojson) and add your listing
+2. Confirm the email they send you.
+3. Cick here -> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/codeforamerica/cutepets)
+4. Give your new app a unique name. Try the same name as your Twitter account.
+5. Enter in the Twitter values
+6. Enter in the Petharbor values
+7. Enter in your credit card info. You will **NOT** be charged.
+8. Click on "Manage App"
+9. Click on "Heroku Scheduler"
+10. Click on "Add new job"
+11. In the text box, copy and paste `rake tweet_pet`
+12. Keep the dyno size at free. Set the frequency at daily.
+13. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
+14. Wait for it, wait for it.
+15. Yeah! You did it!
+
+#### Github
+Great work. Now, tell us which city you made a cutepets bot for. We do this by sending in a Pull Request with our twitter bot's name and location.
+
+1. Make a new [Github Account](https://github.com/join). Choose the **free** account plan.
+2. Check out the map on the [CutePets Repo](https://github.com/codeforamerica/CutePets/blob/master/where.geojson)
+3. We want to add our own point to the map. We'll need the latitude and longitude for our city. Try using [Bing Maps](https://www.bing.com/maps/) or [http://www.latlong.net/](http://www.latlong.net/) to easily find them.
+4. Edit the where.geojson file using [this link](https://github.com/codeforamerica/CutePets/edit/master/where.geojson).
+5. Add in your twitter bot's name and location using the format below. Note that the negative longitude goes first. Be sure to have that comma at the very end too.
+```
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "http://twitter.com/CutePetsAdamsCo"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -104.871902 , 39.891651 ]
+			}
+		},
+```
+6. Click "Propose Changes" at the bottom of the page.
+7. Click "Create Pull Request"
+8. That's it! Thanks!

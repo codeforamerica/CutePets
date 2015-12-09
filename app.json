@@ -1,0 +1,39 @@
+{
+  "name": "CutePets",
+  "description": "Twitter bot that posts adoptable pets in your city.",
+  "repository": "https://github.com/hackyourcity-test/CutePets",
+  "logo": "https://pbs.twimg.com/profile_images/491422568943857664/rKbENZuU.jpeg",
+  "keywords": [
+    "codeforamerica"
+  ],
+  "env": {
+    "api_key": {
+      "description": "Your Twitter consumer key goes here"
+    },
+    "api_secret": {
+      "description": "Your Twitter consumer secret key goes here"
+    },
+    "access_token": {
+      "description": "Your Twitter access token goes here"
+    },
+    "access_token_secret": {
+      "description": "Your Twitter access token secret goes here"
+    },
+    "petharbor_shelter_id": {
+      "description": "The id of the pet harbpr shelter"
+    },
+    "petharbor_pet_types": {
+      "description": "The types of pets to search for ('dog', 'cat', or 'others', separated by spaces)",
+      "value": "dog cat others"
+    },
+    "pet_datasource": {
+      "description": "The pet data source (don't change this)",
+      "value": "petharbor"
+    }
+  },
+  "addons": [
+    "scheduler"
+  ],
+  "success_url" : "https://scheduler.heroku.com/dashboard"
+
+}

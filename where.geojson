@@ -3,6 +3,18 @@
 	"type": "FeatureCollection",
 	"features": [
 		
+		{
+            		"type": "Feature",
+        		"properties":
+            		{
+                		"twitter" : "https://twitter.com/CutePetsLOLakes"
+            		},
+            		"geometry":
+            		{
+                		"type": "Point",
+                		"coordinates": [ -82.457550, 28.223270 ]
+            		}
+        	},
 		{ 
 			"type": "Feature", 
 			"properties": 
@@ -218,6 +230,138 @@
 				"type": "Point",
 				"coordinates": [ -85.7667, 38.2500 ]
 			}
-		}
+		},
+                {
+                        "type": "Feature",
+                        "properties":
+                        {
+                                "twitter" : "https://twitter.com/cutepetslex"
+                        },
+                        "geometry":
+                        {
+                                "type": "Point",
+                                "coordinates": [ -84.494722, 38.029722 ]
+                        }
+                },
+                {
+                        "type": "Feature",
+                        "properties":
+                        {
+                                "twitter" : "https://twitter.com/cutepetsnola"
+                        },
+                        "geometry":
+                        {
+                                "type": "Point",
+                                "coordinates": [ -89.935135, 30.308489 ]
+                        }
+                },
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/cutepetsslc"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -111.8910500, 40.7607800 ]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties":
+			{
+				"twitter" : "https://twitter.com/PetsToLove"
+			},
+			"geometry":
+			{
+				"type": "Point",
+				"coordinates": [ -80.2000, 25.7667 ]
+			}
+		},		
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsAtlanta"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [  -84.3925952911377, 33.7453962306953 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsBham"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -86.801728, 33.520648 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/petschemnitz"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ 12.9252977, 50.8322608 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsBmore"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -76.6167, 39.2833 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsTtown"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -87.570555, 33.210795 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsNYC"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -73.9604, 40.7684 ]
+      }    
+    },
+        {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsCologne"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ 6.956944, 50.938056 ]
+      }    
+    }
 	]
 }
