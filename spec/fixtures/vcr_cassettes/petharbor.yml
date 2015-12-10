@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.petharbor.com/petoftheday.asp?availableonly=1&shelterlist='DNVR'&showstat=1&source=results&type=dog
+    uri: http://www.petharbor.com/petoftheday.asp?availableonly=1&shelterlist=%27DNVR%27&showstat=1&source=results&type=dog
     body:
       encoding: US-ASCII
       string: ''
