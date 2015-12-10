@@ -69,7 +69,7 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 9. Click on "Manage App"
 10. Click on "Heroku Scheduler"
 11. Click on "Add new job"
-12. In the text box, copy and paste `rake tweet_pet`
+12. In the text box, copy and paste `rake post_pet_twitter` or `rake post_pet_facebook` to post on Twitter and Facebook respectively
 13. Keep the dyno size at free. Set the frequency at daily.
 14. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
 15. Wait for it, wait for it.
