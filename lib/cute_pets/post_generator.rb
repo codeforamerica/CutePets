@@ -1,4 +1,4 @@
-require 'twitter'
+require 'koala'
 require 'open-uri'
 # This is terrible, but required. It resets a const in open-uri to guarantee that a File object
 # is always returned when open() is called. Without it, data less than 10k will cause open() to
@@ -10,14 +10,22 @@ require 'yaml'
 require 'dotenv'
 Dotenv.load
 
-module TweetGenerator
+module PostGenerator
   extend self
 
   MESSAGES = YAML.load(File.open('lib/greetings.yml'))
 
-  def tweet(message, pet_pic_url)
+  def post_facebook(message, pet_pic_url)
+    options = {
+        :message => message,
+        :picture => pet_pic_url
+    }
+    facebook_client.put_connections("me", "feed", options)
+  end
+
+  def post_twitter(message, pet_pic_url)
     pet_pic_img = open(pet_pic_url)
-    client.update_with_media(message, pet_pic_img)
+    twitter_client.update_with_media(message, pet_pic_img)
   end
 
   def create_message(pet_name, pet_description, pet_link)
@@ -29,7 +37,15 @@ module TweetGenerator
     MESSAGES.sample
   end
 
-  def client
+  def facebook_client
+    begin
+      Koala::Facebook::API.new(ENV.fetch('oauth_access_token'))
+    rescue
+      raise "Please check that your facebook keys are correct"
+    end
+  end
+
+  def twitter_client
     Twitter::REST::Client.new do |config|
       begin
         config.consumer_key = ENV.fetch('api_key')

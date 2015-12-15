@@ -31,6 +31,12 @@ We're scraping info from Petharbor to make our Twitter bot.
 3. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. It should be `cat` `dog` or `others`.
 4. We'll need this info in a few minutes, keep it around.
 
+#### Facebook
+1. Create a [facebook account](https://facebook.com) with the information you'd like to have when streaming your pet tweets
+2. Get an [auth token](https://developers.facebook.com/tools/explorer).
+3. On the **Get Token** drop-down, select it and choose **Get Access Token**, press on the tab for **Extended Permissions** and put a check in the box for **publish_actions**
+4. Take note of the **Access Token** for environment set up below.
+
 
 #### Twitter
 First we'll make a new twitter account, then we'll set up the 'bot' side of things.
@@ -56,16 +62,18 @@ This is where we'll turn on a free rented computer in the sky. It will run the c
 3. Cick here -> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/codeforamerica/cutepets)
 4. Give your new app a unique name. Try the same name as your Twitter account.
 5. Enter in the Twitter values
-6. Enter in the Petharbor values
-7. Enter in your credit card info. You will **NOT** be charged.
-8. Click on "Manage App"
-9. Click on "Heroku Scheduler"
-10. Click on "Add new job"
-11. In the text box, copy and paste `rake tweet_pet`
-12. Keep the dyno size at free. Set the frequency at daily.
-13. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
-14. Wait for it, wait for it.
-15. Yeah! You did it!
+6. Add Facebook environment variables
+    1. `heroku config:set oauth_access_token="your_access_token_goes_here"`
+7. Enter in the Petharbor values
+8. Enter in your credit card info. You will **NOT** be charged.
+9. Click on "Manage App"
+10. Click on "Heroku Scheduler"
+11. Click on "Add new job"
+12. In the text box, copy and paste `rake post_pet_twitter` or `rake post_pet_facebook` to post on Twitter and Facebook respectively
+13. Keep the dyno size at free. Set the frequency at daily.
+14. Choose the closest time to now to send your first tweet. You can check UTC time at [https://www.google.com/search?q=utc+time](https://www.google.com/search?q=utc+time).
+15. Wait for it, wait for it.
+16. Yeah! You did it!
 
 #### Github
 Great work. Now, tell us which city you made a cutepets bot for. We do this by sending in a Pull Request with our twitter bot's name and location.

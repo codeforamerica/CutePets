@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.petfinder.com/pet.getRandom?format=json&key=your_petfinder_key_goes_here&output=full&shelterid=MA38
+    uri: http://api.petfinder.com/pet.getRandom?format=json&key=your_petfinder_key_goes_here&output=full&shelterid=shelter_id_goes_here
     body:
       encoding: US-ASCII
       string: ''
@@ -43,6 +43,6 @@ http_interactions:
         enough room to move around.  Take us home today!**We are already neutered,
         so we can go home with you right away!!**"},"sex":{"$t":"M"},"age":{"$t":"Adult"},"size":{"$t":"M"},"mix":{"$t":"no"},"shelterId":{"$t":"MA38"},"lastUpdate":{"$t":"2014-08-28T03:21:13Z"},"media":{"photos":{"photo":[{"@size":"pnt","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=60&-pnt.jpg","@id":"1"},{"@size":"fpm","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=95&-fpm.jpg","@id":"1"},{"@size":"x","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=500&-x.jpg","@id":"1"},{"@size":"pn","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=300&-pn.jpg","@id":"1"},{"@size":"t","$t":"http://photos.petfinder.com/photos/pets/30078059/1/?bust=1409196072&width=50&-t.jpg","@id":"1"}]}},"id":{"$t":"30078059"},"animal":{"$t":"Small
         & Furry"}},"@xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance","header":{"timestamp":{"$t":"2014-09-12T22:28:26Z"},"status":{"message":{},"code":{"$t":"100"}},"version":{"$t":"0.1"}},"@xsi:noNamespaceSchemaLocation":"http://api.petfinder.com/schemas/0.9/petfinder.xsd"}}'
-    http_version: 
+    http_version:
   recorded_at: Fri, 12 Sep 2014 22:28:27 GMT
 recorded_with: VCR 2.9.3

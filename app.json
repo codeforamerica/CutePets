@@ -16,6 +16,9 @@
     "access_token": {
       "description": "Your Twitter access token goes here"
     },
+    "oauth_access_token": {
+      "description": "Your Facebook access token goes here"
+    },
     "access_token_secret": {
       "description": "Your Twitter access token secret goes here"
     },

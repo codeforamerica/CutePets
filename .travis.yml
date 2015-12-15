@@ -1,5 +1,5 @@
 language: ruby
 rvm:
-  - ruby-2.1.2
+  - ruby-2.2.1
 notifications:
   webhooks: http://project-monitor.codeforamerica.org/projects/d702edae-5a33-478b-9d08-acc4a7826533/status
