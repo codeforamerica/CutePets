@@ -362,6 +362,18 @@
         "type": "Point",
         "coordinates": [ 6.956944, 50.938056 ]
       }    
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsABQ"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ 35.085334, -106.605553 ]
+      }    
     }
 	]
 }
