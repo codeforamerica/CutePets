@@ -377,3 +377,15 @@
     }
 	]
 }
+{
+            "type": "Feature",
+            "properties":
+            {
+                "twitter" : "http://twitter.com/CutePetsMinneapolis"
+            },
+            "geometry":
+            {
+                "type": "Point",
+                "coordinates": [ -93.265011 , 44.977753 ]
+            }
+        },
