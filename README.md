@@ -27,7 +27,7 @@ This service requires a credit card to get set up. This card will **NOT** be cha
 We're scraping info from Petharbor to make our Twitter bot.
 
 1. Search on [petharbor.com](http://www.petharbor.com) for a shelter in your town.
-2. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/pet.asp?uaid=BRKL.A034281](http://www.petharbor.com/pet.asp?uaid=BRKL.A034281) is `BRKL`.
+2. Find the petharbor shelter id. The shelter id can be found near the end of the url, before the pet id, when clicking on the short link for a pet through petharbor.com. i.e. the shelter id in [http://www.petharbor.com/site.asp?ID=69155](http://www.petharbor.com/site.asp?ID=69155) is `69155`.
 3. Figure out which pet types your shelter has. Do a search on [petharbor.com](http://www.petharbor.com) narrowed down by your shelter. It should be `cat` `dog` or `others`.
 4. We'll need this info in a few minutes, keep it around.
 
