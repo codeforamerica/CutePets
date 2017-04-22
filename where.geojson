@@ -374,6 +374,18 @@
         "type": "Point",
         "coordinates": [ -106.605553, 35.085334 ]
       }    
-    }
+    },
+    {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/CutePetsSTL"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -90.199404, 38.627003 ]
+      }    
+    }		
 	]
 }
