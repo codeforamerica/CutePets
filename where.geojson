@@ -389,3 +389,15 @@
     }		
 	]
 }
+        {
+      "type": "Feature",
+      "properties":
+      {
+        "twitter" : "https://twitter.com/PetsMinneapolise"
+      },
+      "geometry":
+      {
+        "type": "Point",
+        "coordinates": [ -93.265011 , 44.977753 ]
+      }    
+    },
