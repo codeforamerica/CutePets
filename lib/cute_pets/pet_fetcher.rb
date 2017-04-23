@@ -126,6 +126,8 @@ private
 
   def get_petfinder_shelter_id
     get_shelter_id(ENV.fetch('petfinder_shelter_id'))
+  rescue KeyError
+    get_local_shelter_ids
   end
 
   def get_petharbor_shelter_id
@@ -134,5 +136,24 @@ private
 
   def get_shelter_id(id)
     id.split(',').sample
+  end
+
+  def get_local_shelter_ids()
+    uri = URI('http://api.petfinder.com/shelter.find')
+    params = {
+      format:    'json',
+      key:        ENV.fetch('petfinder_key'),
+      location:  ENV.fetch('zip_code'),
+    }
+    uri.query = URI.encode_www_form(params)
+    response = Net::HTTP.get_response(uri)
+
+    if response.kind_of? Net::HTTPSuccess
+      json = JSON.parse(response.body)
+      shelters_json  = json['petfinder']['shelters']['shelter']
+      shelters_json.each.map { |shelter| shelter['id']['$t'] }.sample
+    else
+      raise 'PetFinder api request failed'
+    end
   end
 end
